@@ -13,10 +13,11 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:icon="@android:drawable/ic_menu_info_details"
-        android:roundIcon="@android:drawable/ic_menu_info_round">
+        android:roundIcon="@android:drawable/ic_menu_info_round"
+        android:theme="@style/Theme.SystemUpdate">
 
         <!-- Activity الرئيسية -->
-        <activity 
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
