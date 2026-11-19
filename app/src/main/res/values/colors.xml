@@ -3,4 +3,12 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+    
+    <!-- Added missing color referenced in themes.xml -->
+    <color name="system_background">#FFFFFF</color>
+    
+    <!-- Additional colors for UI consistency -->
+    <color name="text_color_primary">#333333</color>
+    <color name="text_color_secondary">#666666</color>
+    <color name="progress_bar_color">#4CAF50</color>
 </resources>
