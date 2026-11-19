@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!-- Allows access to the entire external storage -->
+    <external-path name="external_storage" path="." />
+    
+    <!-- Optional: If you need specific directories -->
+    <!-- <external-files-path name="files" path="." /> -->
+</paths>
