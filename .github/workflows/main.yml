@@ -1,43 +1,16 @@
-name: Android CI/CD - Build & Upload
+- name: Set up JDK 17
+  uses: actions/setup-java@v4
+  with:
+    java-version: '17'
+    distribution: 'temurin'
+    cache: gradle
 
-on:
-  push:
-    branches: [ "main", "master" ]
-  pull_request:
-    branches: [ "main", "master" ]
+- name: Grant execute permission for gradlew
+  run: chmod +x gradlew
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
+# هذا السطر هو الأهم - هيقوم بتحميل الـ jar الصحيح لو ناقص أو تالف
+- name: Generate Gradle Wrapper
+  run: ./gradlew wrapper --gradle-version 8.7
 
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-
-      - name: Set up JDK 17
-        uses: actions/setup-java@v4
-        with:
-          java-version: '17'
-          distribution: 'temurin'
-          cache: gradle
-
-      - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
-
-      - name: Build Debug APK
-        run: ./gradlew assembleDebug
-
-      - name: Build Release APK (Optional)
-        run: ./gradlew assembleRelease
-
-      - name: Upload Debug Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: app-debug.apk
-          path: app/build/outputs/apk/debug/app-debug.apk
-
-      - name: Upload Release Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: app-release.apk
-          path: app/build/outputs/apk/release/app-release.apk
+- name: Build Debug APK
+  run: ./gradlew assembleDebug
