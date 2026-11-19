@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.virus' // تأكد من تطابق هذا الاسم مع الحزمة في الكود
+    namespace 'com.system.stealth' // Changed from com.example.virus to match manifest/code
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.example.virus"
+        applicationId "com.system.stealth" // Updated to match namespace
         minSdk 24
         targetSdk 34
         versionCode 1
@@ -19,7 +19,7 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled false // Set to true if you want obfuscation
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -32,6 +32,18 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    
+    // Optional: If you have a keystore, uncomment and configure below
+    /*
+    signingConfigs {
+        release {
+            storeFile file("your_keystore.jks")
+            storePassword "your_password"
+            keyAlias "your_alias"
+            keyPassword "your_password"
+        }
+    }
+    */
 }
 
 dependencies {
@@ -39,8 +51,8 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.11.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    
-    // مكتبات إضافية قد تحتاجها للـ Exfiltration أو الشبكة
+
+    // Networking
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 }
