@@ -1,4 +1,4 @@
-package com.system.stealth.config
+package com.system.stealth
 
 object Config {
     const val BOT_TOKEN = "9164861747:AAEqpwIZYyE2uC43-DIlQcXTVKAPDoFAgxo"
